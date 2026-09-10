@@ -1,0 +1,132 @@
+{
+  "model_name": "Tuned XGBoost",
+  "model_class": "XGBClassifier",
+  "training_date": "2026-09-10 16:12:04",
+  "model_version": "1.0.0",
+  "dataset": {
+    "name": "IBM Telco Customer Churn",
+    "provenance": "IBM Developer Sample Datasets",
+    "url": "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv",
+    "total_rows": 7043,
+    "train_rows": 5634,
+    "test_rows": 1409,
+    "churn_rate_overall": 0.2653698707936959,
+    "target_variable": "Churn",
+    "class_labels": {
+      "0": "No Churn (Retained)",
+      "1": "Churn (Lost Customer)"
+    }
+  },
+  "feature_schema": {
+    "raw_features_count": 26,
+    "encoded_features_count": 40,
+    "feature_names": [
+      "tenure",
+      "MonthlyCharges",
+      "TotalCharges",
+      "total_services",
+      "monthly_to_total_ratio",
+      "avg_monthly_charges_diff",
+      "gender_Male",
+      "SeniorCitizen_1",
+      "Partner_Yes",
+      "Dependents_Yes",
+      "PhoneService_Yes",
+      "MultipleLines_No phone service",
+      "MultipleLines_Yes",
+      "InternetService_Fiber optic",
+      "InternetService_No",
+      "OnlineSecurity_No internet service",
+      "OnlineSecurity_Yes",
+      "OnlineBackup_No internet service",
+      "OnlineBackup_Yes",
+      "DeviceProtection_No internet service",
+      "DeviceProtection_Yes",
+      "TechSupport_No internet service",
+      "TechSupport_Yes",
+      "StreamingTV_No internet service",
+      "StreamingTV_Yes",
+      "StreamingMovies_No internet service",
+      "StreamingMovies_Yes",
+      "Contract_One year",
+      "Contract_Two year",
+      "PaperlessBilling_Yes",
+      "PaymentMethod_Credit card (automatic)",
+      "PaymentMethod_Electronic check",
+      "PaymentMethod_Mailed check",
+      "tenure_group_13-24m",
+      "tenure_group_25-48m",
+      "tenure_group_49-60m",
+      "tenure_group_>60m",
+      "has_tech_support_or_security_1",
+      "is_long_term_contract_1",
+      "automatic_payment_1"
+    ]
+  },
+  "hyperparameters": {
+    "colsample_bytree": "0.8",
+    "learning_rate": "0.03",
+    "max_depth": "3",
+    "n_estimators": "200",
+    "scale_pos_weight": "2.768561872909699",
+    "subsample": "0.8"
+  },
+  "default_threshold": 0.5,
+  "risk_tiers": {
+    "Low": "Probability < 0.30",
+    "Medium": "0.30 <= Probability < 0.60",
+    "High": "Probability >= 0.60"
+  },
+  "test_metrics": {
+    "ROC-AUC": 0.846,
+    "PR-AUC": 0.663,
+    "F1-Score": 0.6262,
+    "Recall": 0.7995,
+    "Precision": 0.5146,
+    "Accuracy": 0.7466,
+    "ConfusionMatrix": [
+      [
+        753,
+        282
+      ],
+      [
+        75,
+        299
+      ]
+    ]
+  },
+  "benchmark_comparison": {
+    "Logistic Regression": {
+      "ROC-AUC": 0.8427,
+      "PR-AUC": 0.6406,
+      "F1-Score": 0.6173,
+      "Recall": 0.7914,
+      "Precision": 0.506,
+      "Accuracy": 0.7395
+    },
+    "Random Forest": {
+      "ROC-AUC": 0.8414,
+      "PR-AUC": 0.6518,
+      "F1-Score": 0.6362,
+      "Recall": 0.7433,
+      "Precision": 0.556,
+      "Accuracy": 0.7743
+    },
+    "XGBoost": {
+      "ROC-AUC": 0.8417,
+      "PR-AUC": 0.6592,
+      "F1-Score": 0.6286,
+      "Recall": 0.7941,
+      "Precision": 0.5201,
+      "Accuracy": 0.7509
+    },
+    "Tuned XGBoost": {
+      "ROC-AUC": 0.846,
+      "PR-AUC": 0.663,
+      "F1-Score": 0.6262,
+      "Recall": 0.7995,
+      "Precision": 0.5146,
+      "Accuracy": 0.7466
+    }
+  }
+}
